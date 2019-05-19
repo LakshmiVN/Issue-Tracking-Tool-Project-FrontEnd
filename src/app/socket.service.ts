@@ -9,7 +9,7 @@ import { Observable, observable } from "rxjs";
   providedIn: "root"
 })
 export class SocketService {
-  private baseUrl = "http://localhost:3000";
+  private baseUrl = "http://IssueTrackingTool-env.p23byauyic.us-east-2.elasticbeanstalk.com";
   private socket; 
   constructor(private http: HttpClient, private Cookie: CookieService) {
     this.socket = io(this.baseUrl);

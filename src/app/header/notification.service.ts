@@ -18,7 +18,7 @@ constructor(private http: HttpClient,private Cookie: CookieService) {
   this.id = this.Cookie.get('userId');
 }
 
-public baseUrl ='http://localhost:3000/api/v1/notification/';
+public baseUrl ='http://IssueTrackingTool-env.p23byauyic.us-east-2.elasticbeanstalk.com/api/v1/notification/';
 
 
   notifications: any = [];

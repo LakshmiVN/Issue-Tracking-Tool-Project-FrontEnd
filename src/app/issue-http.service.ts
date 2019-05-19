@@ -19,7 +19,7 @@ export class IssueHttpService {
     this.cookie = this.Cookie.get('authtoken'); 
   }
 
-  public baseUrl = "http://localhost:3000/api/v1/issues";
+  public baseUrl = "http://IssueTrackingTool-env.p23byauyic.us-east-2.elasticbeanstalk.com/api/v1/issues";
 
   public getAllIssues(): Observable<any> {
     let myResponse = this._http.get(this.baseUrl + '/all' + '?authToken='+ this.cookie);

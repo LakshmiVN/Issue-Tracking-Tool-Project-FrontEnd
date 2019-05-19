@@ -13,7 +13,7 @@ export class WatcherServiceService {
     this.auth = this.Cookie.get('authtoken'); 
    }
 
-public baseUrl = 'http://localhost:3000/api/v1/watcher';
+public baseUrl = 'http://IssueTrackingTool-env.p23byauyic.us-east-2.elasticbeanstalk.com/api/v1/watcher';
 
   addWatchers(issueid: string, userId: any, email: string) {
     const issueId = { issueId: issueid, userId: userId, email:email };

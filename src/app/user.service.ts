@@ -11,7 +11,7 @@ import { Subject } from "rxjs";
 })
 export class UserService {
   private auth: any;
-  public url = 'http://localhost:3000/api/v1/users';
+  public url = 'http://IssueTrackingTool-env.p23byauyic.us-east-2.elasticbeanstalk.com/api/v1/users';
   private authListener = new Subject<boolean>();
   private isAuthenticated = false;
   private users:any = [];
