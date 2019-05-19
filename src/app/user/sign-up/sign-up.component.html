@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" (click)="goToSignIn()">Sign-In</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-sm p-5">
+      <form>
+        <div class="form-group input-group col-6" style="display: inline-flex; padding:0;">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+          </div>
+          <input class="form-control" [(ngModel)]="firstName" placeholder="First name" name="firstName" type="text">
+        </div> <!-- form-group// -->
+        <div class="form-group input-group col-6" style="padding-right:0;display: inline-flex;">
+          <input class="form-control" [(ngModel)]="lastName" placeholder="Last name" name="lastName" type="text">
+        </div> <!-- form-group// -->
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+          </div>
+          <input name="" class="form-control" [(ngModel)]="email" placeholder="Email address" name="email">
+        </div> <!-- form-group// -->
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+          </div>
+          <select class="custom-select" style="max-width: 120px;">
+            <option selected="">+91</option>
+            <option value="1">+972</option>
+            <option value="2">+198</option>
+            <option value="3">+701</option>
+          </select>
+          <input name="" class="form-control" placeholder="Phone number" [(ngModel)]="mobile" name="mobile" type="text">
+        </div> <!-- form-group// -->
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+          </div>
+          <input class="form-control" placeholder="Create password" [(ngModel)]="password" name="password"
+            type="password">
+        </div> <!-- form-group// -->
+        <div class="col-5 form-group" style="margin: 0 auto;">
+          <button type="submit" class="btn btn-primary btn-block" (click)="signupFunction()"> Create Account </button>
+        </div> <!-- form-group// -->
+        <p class="text-center">Have an account? <a href="javascript:void(0)" (click)="goToSignIn()">Log In</a> </p>
+      </form>
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+  }
+
+  .example-container > * {
+    width: 100%;
+  }
+  
+  .button{
+      text-align: center;
+  }
+
+  .form-control{
+      height: auto;
+  }
+
+  
+  input[type="file"] {
+    visibility: hidden;
+  }
+  
+  .image-preview {
+    height: 15rem;
+    width: 15rem;
+    margin: 1rem 0;
+    text-align: center;
+  }
+  
+  .image-preview img {
+    height: 100%;
+  }
+
+  .image-button{
+    cursor: pointer;
+  }

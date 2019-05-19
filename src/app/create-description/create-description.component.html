@@ -1,0 +1,47 @@
+<app-header></app-header>
+<div class="container">
+  <form [formGroup]="formGroup" (ngSubmit)="onIssueSubmit(createIssueForm)">
+    <div class="row p-3" style="justify-content: center;">
+      <div class="example-container col-9 col-sm-6 col-md-8">
+        <mat-form-field>
+          <input matInput placeholder="Title" formControlName="title" required>
+          <mat-error *ngIf="formGroup.get('title').invalid">please enter a valid title</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Status</mat-label>
+          <mat-select [(ngModel)]="selectedValue" formControlName="status">
+            <mat-option *ngFor="let status of statuses" [value]="status.value">
+              {{status.viewValue}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="formGroup.get('status').invalid">please select a status</mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Assigned to</mat-label>
+          <mat-select formControlName="assigned">
+            <mat-option *ngFor="let assign of assignedTo" [value]="assign">{{ assign }}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="formGroup.get('assigned').invalid">please select a valid option</mat-error>
+        </mat-form-field>
+        <div class="image-preview" *ngIf="imagePreview !== '' && imagePreview && formGroup.get('image').valid">
+          <img [src]="imagePreview" alt="formGroup.value.title" />
+        </div>
+        <br>
+        <br>
+        <button type="button" class="btn btn-outline-primary image-button" (click)="filePicker.click()"
+          style="width:120px; margin:0 auto;" required>
+          Select Image
+        </button>
+        <input type="file" #filePicker (change)="onImagePicked($event)" />
+        <app-ngx-editor [placeholder]="'Enter description here...'" [toolbar]="ngxToolbar" [spellcheck]="true"
+          formControlName="description" height="100px" minHeight="50px" required>
+        </app-ngx-editor>
+        <br>
+        <br>
+        <div class="button">
+          <button mat-raised-button color="primary" matTooltip="Click here to submit the issue" [disabled]="!formGroup.valid">Submit</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

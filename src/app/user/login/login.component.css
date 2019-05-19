@@ -1,0 +1,51 @@
+  
+.signup{
+  text-align: right;
+}
+
+.header-image {
+  background-image: url('./../../../../Images/login.png');
+  background-size: cover;
+}
+
+.info-image{
+  background-image: url('./../../../../Images/favicon.png');
+  background-size: contain;
+  text-align: center;
+  margin: 0 auto;
+  background-repeat: no-repeat; 
+}
+
+.button-class{
+  text-align: center;
+}
+
+.mat-card-content{
+  width: 100%;
+}
+
+.navbar-collapse{
+  margin: 0 0 0 auto;
+}
+
+.nav-link:hover{
+  cursor: pointer;
+}
+
+.navbar-nav{
+  margin: inherit;
+}
+ 
+.mat-card{
+  text-align: center;
+}
+
+@media screen and (max-width: 640px) {
+  .description-card{
+    width: 500px;
+  }
+
+  .login-details{
+    width: 500px;
+  }
+}

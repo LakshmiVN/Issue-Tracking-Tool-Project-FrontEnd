@@ -1,0 +1,24 @@
+ .navbar-collapse{
+    margin: 0 0 0 auto;
+    flex-grow: 0;
+  }
+.navbar-dark .navbar-nav .nav-link{
+    color:beige;
+}
+.navbar-dark .navbar-nav .nav-link:hover{
+    color:dimgray;
+}
+.signup:hover{
+  cursor: pointer;
+}
+
+mat-icon{
+  color: white
+}
+
+.navbar{
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+

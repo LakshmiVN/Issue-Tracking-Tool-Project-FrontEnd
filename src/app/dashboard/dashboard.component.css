@@ -1,0 +1,59 @@
+table {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  min-width: 500px;
+}
+
+body {
+  font-family: 'Covered By Your Grace', cursive;
+  line-height: 1.25;
+}
+  
+@media screen and (max-width: 640px) {
+  .mat-header-cell{
+    display:none;
+  }
+
+  .mat-table {
+    border: 0;
+    vertical-align: middle
+  }
+  
+  .mat-table caption {
+    font-size: 1em;
+  }
+  
+  .mat-table .mat-row {
+    border-bottom: 5px solid #ddd;
+    display: block;
+  }
+  
+  .mat-table .mat-cell {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 1em;
+    text-align: right;
+    padding-right: 25px;
+    font-weight: normal;
+    height:30px;
+    margin-bottom: 4%;
+  }
+    
+  .mat-table .mat-cell:before { 
+    content: attr(data-label);
+    float: left;
+    padding-left: 25px;
+    font-weight: normal;
+    font-size: 15px;
+  }
+    
+  .mat-table .mat-cell:last-child {
+    border-bottom: 0;
+  }
+  
+  .mat-table .mat-cell:first-child {
+    margin-top: 4%;
+    padding: 0;
+  }
+}

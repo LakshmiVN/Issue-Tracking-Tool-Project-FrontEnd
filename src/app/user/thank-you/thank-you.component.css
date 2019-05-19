@@ -1,0 +1,12 @@
+.navbar-nav{
+  margin: inherit;
+}
+
+  
+.navbar-collapse{
+  margin: 0 0 0 auto;
+}
+
+.nav-link:hover{
+    cursor: pointer;
+}

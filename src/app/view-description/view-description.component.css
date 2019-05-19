@@ -1,0 +1,45 @@
+.issue-card {
+  max-width: 800px;
+  text-align: center;
+}
+
+.issue-title{
+  text-align: center;
+}
+
+.title-class{
+  font-size: 25px;
+  font-family: 'Times New Roman', Times, serif; 
+}
+
+.card-body {
+  padding: 2px;
+}
+@media only screen and (max-width: 640px) {
+  .image-size{
+    height: 150px;
+    width: 150px;
+  }
+}
+
+@media only screen and (min-width:641px) and (max-width: 799px) {
+  .image-size{
+    height: 250px;
+    width: 250px;
+  }
+}
+
+@media only screen and (min-width:800px) and (max-width: 1024px) {
+  .image-size{
+    height: 350px;
+    width: 350px;
+  }
+}
+
+@media only screen and (min-width:1025px) {
+  .image-size{
+    height: 500px;
+    width: 500px;
+  }
+}
+  

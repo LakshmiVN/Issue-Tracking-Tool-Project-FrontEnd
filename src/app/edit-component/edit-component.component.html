@@ -1,0 +1,54 @@
+<app-header></app-header>
+<div class="background-container">
+  <div class="container" *ngIf="currentIssue">
+    <form #createIssueForm="ngForm" (ngSubmit)="editIssue()">
+      <div class="container">
+        <div class="row p-5" style="justify-content: center;">
+          <div class="example-container col-9 col-sm-6 col-md-8">
+            <mat-form-field>
+              <input matInput placeholder="Title" name="issueTitle" [(ngModel)]="currentIssue.title" #title="ngModel"
+                class="form-control" required>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-select [(ngModel)]="currentIssue.status" name="status">
+                <mat-option *ngFor="let status of statuses" [value]="status.value">
+                  {{status.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Assigned to</mat-label>
+              <mat-select [(ngModel)]="currentIssue.reporter" name="reporter">
+                <mat-option *ngFor="let assign of assignedTo" [value]="assign">{{ assign }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <div class="image-preview" [(ngModel)]="currentIssue.image"
+              *ngIf="imagePreview !== '' && imagePreview && formGroup.get('image').valid">
+              <img [src]="currentIssue.imagePath"/>
+            </div>
+            <br>
+            <br>
+            <button type="button" class="btn btn-outline-primary image-button" (click)="filePicker.click()"
+              style="width:120px; margin:0 auto;" required>
+              Select Image
+            </button>
+            <input type="file" #filePicker (change)="onImagePicked($event)" />
+            <app-ngx-editor class="editor" [placeholder]="'Enter description here...'" [spellcheck]="true"
+              name="issueDescription" [(ngModel)]="currentIssue.description" #description="ngModel" class="form-control"
+              required>
+            </app-ngx-editor>
+            <div class="container">
+              <div class="row p-3">
+                <div class="col-3 col-sm-3 col-md-2"></div>
+                <div class="button col-8 col-sm-6 col-md-8">
+                  <button mat-raised-button color="primary" [disabled]="!createIssueForm.form.valid">Submit</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+      </div>
+    </form>
+  </div>
+</div>

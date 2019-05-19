@@ -1,0 +1,101 @@
+<app-header></app-header>
+<div class="background-container">
+  <div class="container">
+    <div class="row p-5" style="justify-content:center;">
+      <mat-card class="issue-card col-9 col-sm-6 col-md-8 p-3">
+        <mat-card-header>
+          <mat-card-title class="issue-title">Issue Description</mat-card-title>
+          <mat-card-subtitle></mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="container">
+            <div class="row" *ngIf="currentIssue">
+              <div class="col-md-12">
+                <div class="title-class">{{currentIssue.title}}</div>
+                <p>Assigned to <i> <b> {{currentIssue.reporter}} </b> </i> on <b> {{currentIssue.created | date}} </b>
+                </p>
+                <p>Status : {{currentIssue.status}}</p>
+                <div class="container">
+                  <div class="row">
+                    <div class="col-12">
+                      <img [src]="currentIssue.imagePath" class="img-responsive text-center image-size" />
+                    </div>
+                  </div>
+                  <br>
+                  <br>
+                  <div>{{currentIssue.description}}</div>
+                </div>
+              </div>
+              <hr>
+            </div>
+          </div>
+        </mat-card-content>
+        <mat-card-actions *ngIf="currentIssue">
+          <button mat-raised-button color="primary" [routerLink]="['/edit',currentIssue.issueId]"
+            matTooltip="Edit issue">Edit</button>
+          <button mat-raised-button color="warn" (click)="deleteIssue()" matTooltip="Delete issue">Delete</button>
+          <button mat-raised-button color="accent" (click)="goBackToPreviousPage()"
+            matTooltip="Click here to view all the issues">View all Issues</button>
+          <button mat-raised-button color="primary" (click)="onWatcher()"
+            matTooltip="Click here to be a watcher for this issue">Be a Watcher</button>
+          <div class="row p-3">
+            <div class="col-12">
+              <button mat-stroked-button color="primary" data-toggle="collapse" href="#multiCollapseExample1"
+                role="button" aria-expanded="false" aria-controls="multiCollapseExample1"
+                matTooltip="Click here to see all the watchers"
+                style="color:black; font-family: Arial, Helvetica, sans-serif;" (click)="getWatchers()">All watchers
+                for this issue</button>
+              <div class="row p-3">
+                <div class="col">
+                  <div class="collapse multi-collapse" id="multiCollapseExample1">
+                    <div class="card card-body text-center" style="background:lightgrey !important; padding: 2px;">
+                      <ul class="list-group">
+                        <li class="list-group-item text-muted" *ngFor="let watcher of allWatchers">
+                          {{ watcher }}
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <div class="form-group">
+                  <label class="text-muted float-left">Comment here</label>
+                  <textarea class="form-control" rows="5" [(ngModel)]="singleComment" #inputField></textarea>
+                  <button class="btn btn-outline-success float-left"
+                    style="margin-top:20px;background-color: green; color:white;" matTooltip="Click here to comment"
+                    [disabled]="!inputField.value" (click)="onComment()">
+                    Comment
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container" style="padding:15px;">
+            <div class="row" *ngFor="let data of savedData">
+              <div class="col-4 float-right" style="width:100%;">
+                <strong class="text-muted" style="font-size:15px;"> {{ data.email }} commented:</strong>
+              </div>
+              <div class="col-8 float-left text-muted">
+                {{ data.comment }}
+              </div>
+            </div>
+            <div class="row" *ngFor="let user of commentData">
+              <div class="col-4 float-right" style="width:100%;">
+                <strong class="text-muted" style="font-size:15px;"> {{ user.email }} commented:</strong>
+              </div>
+              <div class="col-8 float-left text-muted">
+                {{ user.comment }}
+              </div>
+            </div>
+          </div>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

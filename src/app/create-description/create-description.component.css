@@ -1,0 +1,44 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    border: 1px solid black;
+    background-color: white;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }
+  
+  .button{
+      text-align: center;
+  }
+
+  input[type="file"] {
+    visibility: hidden;
+  }
+  
+  .image-preview {
+    height: 15rem;
+    width: 15rem;
+    margin: 1rem 0;
+    text-align: center;
+  }
+  
+  .image-preview img {
+    height: 100%;
+  }
+
+  .image-button{
+    cursor: pointer;
+  }
+  .ngx-toolbar {
+    background-color: rgba(0, 0, 0, 0.03) !important;
+  }
+  .ngx-editor-button {
+    background-color: beige !important ;
+    border: 1px transparent;
+  }
+  .ngx-editor-grippie {
+    background-color: beige !important;
+  } 
